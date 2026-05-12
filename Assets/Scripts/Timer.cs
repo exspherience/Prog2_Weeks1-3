@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float duration = 10;
+    public float duration = 3f;
+    Vector2 teleportPosition;
     float progress = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +19,10 @@ public class Timer : MonoBehaviour
 
         if(progress >= duration)
         {
-            Debug.Log("Time is Up");
+            teleportPosition.x = Random.Range(-5, 5);
+            teleportPosition.y = Random.Range(-5, 5);
+            transform.position = teleportPosition;
+            progress = 0f;
         }
     }
 }
