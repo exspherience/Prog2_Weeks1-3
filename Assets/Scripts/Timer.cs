@@ -3,7 +3,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public float duration = 3f;
-    Vector2 teleportPosition;
+    Vector3 teleportPosition;
     float progress = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
