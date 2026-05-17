@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 public class Rollover : MonoBehaviour
 {
     public float distanceThreshold = 1f;
-    public float duration;
-
     public AnimationCurve vibrateCurve;
     bool timerRun = false;
     float timer;
