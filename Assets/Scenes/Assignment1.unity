@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1020053895}
   - component: {fileID: 1020053896}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Mouse_Dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1213423467}
   - component: {fileID: 1213423469}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Cursor_Dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mover
   startPos: {x: 0, y: 0}
   endPos: {x: 0, y: 0}
-  t: 0
+  progress: 0
   duration: 3
 --- !u!1 &1668054973
 GameObject:
@@ -498,12 +498,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668054973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf27a644282301458bdbaf9c53b3009, type: 3}
+  m_Script: {fileID: 11500000, guid: e5c2eefecd10ee74cbecc4521425d3ac, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Spinner
-  speed: -50
-  zMax: 360
-  zMin: 300
+  m_EditorClassIdentifier: Assembly-CSharp::TailFlick
+  flickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.877517
+      outSlope: -0.877517
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5026892
+      value: 0.5588817
+      inSlope: 0.004745126
+      outSlope: 0.004745126
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.88700724
+      outSlope: 0.88700724
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  targetAngle: -30
+  flickDistanceThreshold: 1
+  duration: 2
+  progress: 0
+  flickTail: 0
 --- !u!1 &1889575309
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +550,7 @@ GameObject:
   - component: {fileID: 1889575310}
   - component: {fileID: 1889575311}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Tail_Dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
