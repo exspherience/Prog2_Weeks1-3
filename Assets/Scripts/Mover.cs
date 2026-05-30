@@ -4,13 +4,21 @@ public class Mover : MonoBehaviour
 {
     public Vector2 startPos;
     public Vector2 endPos;
+
+    // Min and Max X & Y locations
+    // Set on object
+    public float xMax;
+    public float xMin;
+    public float yMax;
+    public float yMin;
+
     public float progress = 0;
     public float duration = 3f; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos = transform.position; // Set Start to Objecct position
+        startPos = transform.position; // Set Start to Object position
         selectEndPosition();
     }
 
@@ -27,9 +35,6 @@ public class Mover : MonoBehaviour
     }
     void changeLocation()
     {
-        /*  Update the starting position to be its current position
-         *  Pick a new random position for the destination
-         *  Reset t variable for your timer so the shape keeps moving */
         if (progress/duration >= 1)
         {
             // change start position, select new end position
@@ -42,10 +47,9 @@ public class Mover : MonoBehaviour
     }
 
     // Set End Position to random location in Range
-    // TODO: Update Range once visuals are added
     void selectEndPosition()
     {
-        endPos.x = Random.Range(-7, -3);
-        endPos.y = Random.Range(-3, 0);
+        endPos.x = Random.Range(xMin, xMax);
+        endPos.y = Random.Range(yMin, yMax);
     }
 }
