@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class TailFlick : MonoBehaviour
 {
     public AnimationCurve flickCurve;
-    public float targetAngle;
-    public float flickDistanceThreshold = 1f;
+    public float targetAngle; // set angle in inspector
+    public float flickDistanceThreshold = 1f; // default flick threshold to 1
 
     public float duration;
     public float progress = 0f;
@@ -28,18 +28,22 @@ public class TailFlick : MonoBehaviour
     // Check that Mouse is near tail
     void checkDistance()
     {
+        // get the mouse position in world point
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         
-        // If near tail, rotate
+        // check if mouse is within threshold
         if(Vector2.Distance(transform.position, mousePos) < flickDistanceThreshold)
         {
+            // set flickTail to true
             flickTail = true;
         }
     }
     void flick()
     {
+        // if flicktail variable is true
         if (flickTail)
         {
+            // start progress timer
             progress += Time.deltaTime;
 
             // evaluate the rotation of the tailAngle vector
@@ -50,6 +54,7 @@ public class TailFlick : MonoBehaviour
             // This allows for only the Z to rotate 
             transform.eulerAngles = new Vector3(0, 0, tailAngle.z);
 
+            // once progress over, restart timer, set flick tail to false
             if (progress >= 2)
             {
                 flickTail = false;

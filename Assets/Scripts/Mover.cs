@@ -6,7 +6,7 @@ public class Mover : MonoBehaviour
     public Vector2 endPos;
 
     // Min and Max X & Y locations
-    // Set on object
+    // Set in inspector
     public float xMax;
     public float xMin;
     public float yMax;
@@ -19,7 +19,7 @@ public class Mover : MonoBehaviour
     void Start()
     {
         startPos = transform.position; // Set Start to Object position
-        selectEndPosition();
+        selectEndPosition(); // set inital end position randomly
     }
 
     // Update is called once per frame
