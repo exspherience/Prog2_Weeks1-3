@@ -2,54 +2,37 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    public Vector2 startPos;
-    public Vector2 endPos;
+    // animation curve for easing
+    public AnimationCurve movementCurve;
 
-    // Min and Max X & Y locations
-    // Set in inspector
-    public float xMax;
-    public float xMin;
-    public float yMax;
-    public float yMin;
+    // start and end position variables
+    public Vector2 start;
+    public Vector2 end;
 
-    public float progress = 0;
-    public float duration = 3f; 
+    // variables for timer
+    float progress;
+    public float duration;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos = transform.position; // Set Start to Object position
-        selectEndPosition(); // set inital end position randomly
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // start timer
         progress += Time.deltaTime;
 
-        // Lerp to move object
-        transform.position = Vector2.Lerp(startPos, endPos, progress/duration);
+        // change position with lerp, and ease with animation curve
+        transform.position = Vector2.Lerp(start, end, movementCurve.Evaluate(progress / duration));
 
-        // Call function to update position start and end
-        changeLocation();
-    }
-    void changeLocation()
-    {
-        if (progress/duration >= 1)
+        // when x position of object matches x of set end position, restart timer
+        // sets object back to start
+        if(transform.position.x == end.x)
         {
-            // change start position, select new end position
-            startPos = endPos;
-            selectEndPosition();
-
-            // reset progress to keep objects moving
-            progress = 0;
+            progress = 0f;
         }
-    }
-
-    // Set End Position to random location in Range
-    void selectEndPosition()
-    {
-        endPos.x = Random.Range(xMin, xMax);
-        endPos.y = Random.Range(yMin, yMax);
     }
 }
