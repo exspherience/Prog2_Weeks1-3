@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bed97226c79dd8e458341af712483f30
+guid: d1db6f9baa7cea947a179d0ad6a8911a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8090468603204882998
-    second: cat_belly_0
+      213: 2088826684994346392
+    second: cat_belly 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_belly_0
+      name: cat_belly 1_0
       rect:
         serializedVersion: 2
         x: 1
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acda587aba1e8bf80800000000000000
-      internalID: -8090468603204882998
+      spriteID: 89dd17c8dc00dfc10800000000000000
+      internalID: 2088826684994346392
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_belly_0: -8090468603204882998
+      cat_belly 1_0: 2088826684994346392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
